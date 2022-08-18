@@ -447,7 +447,15 @@ def queryHandler(update: Update, context: CallbackContext):
         post_data=post.split('////')
         #print(posts)
         if '.jpg' in post_data[0] or '.png' in post_data[0] or '.jpeg' in post_data[0]:
-            bot.delete_message(chat_id=query.message.chat_id, message_id=query.message.message_id)
+            try:
+                bot.delete_message(chat_id=query.message.chat_id, message_id=query.message.message_id)
+            except:
+                post_prev=posts[z-1]
+                post_prev_data=post_prev.split('////')
+                try:
+                    query.message.edit_media(media=InputMediaPhoto(media=post_prev_data[0], caption=post_prev_data[1]))
+                except:
+                    print('wtf')
             try:
                 keyboard=[[InlineKeyboardButton(text='Next', callback_data='nxt_post////'+link),
                    InlineKeyboardButton(text='Sort by category', callback_data='cat////'+link),
@@ -474,7 +482,15 @@ def queryHandler(update: Update, context: CallbackContext):
                     bot.send_message(chat_id=query.message.chat_id, text=post_data[1]+'\n\n'+post_data[0], reply_markup=reply_markup)
                     
         elif '.mp4' in post_data[0] or '.gif' in post_data[0]:
-            bot.delete_message(chat_id=query.message.chat_id, message_id=query.message.message_id)
+            try:
+                bot.delete_message(chat_id=query.message.chat_id, message_id=query.message.message_id)
+            except:
+                post_prev=posts[z-1]
+                post_prev_data=post_prev.split('////')
+                try:
+                    query.message.edit_media(media=InputMediaPhoto(media=post_prev_data[0], caption=post_prev_data[1]))
+                except:
+                    print('wtf')
             try:
                 keyboard=[[InlineKeyboardButton(text='Next', callback_data='nxt_post////'+link),
                    InlineKeyboardButton(text='Sort by category', callback_data='cat////'+link),
@@ -500,7 +516,15 @@ def queryHandler(update: Update, context: CallbackContext):
                     
                     bot.send_message(chat_id=query.message.chat_id, text=post_data[1]+'\n\n'+post_data[0], reply_markup=reply_markup)
         else:
-            bot.delete_message(chat_id=query.message.chat_id, message_id=query.message.message_id)
+            try:
+                bot.delete_message(chat_id=query.message.chat_id, message_id=query.message.message_id)
+            except:
+                post_prev=posts[z-1]
+                post_prev_data=post_prev.split('////')
+                try:
+                    query.message.edit_media(media=InputMediaPhoto(media=post_prev_data[0], caption=post_prev_data[1]))
+                except:
+                    print('wtf')
             try:
                 keyboard=[[InlineKeyboardButton(text='Next', callback_data='nxt_post////'+link),
                    InlineKeyboardButton(text='Sort by category', callback_data='cat////'+link),
@@ -551,7 +575,15 @@ def queryHandler(update: Update, context: CallbackContext):
                 ad_status='not now'
             print(str(now) + ", Ad_status: "+ad_status+", user_fre: "+str(fre)+", Frequency: " + str(post_count) + ", Command: '/sub" + "' , Other : [FirstName:'" + first_name + "', LastName:'" + last_name + "', Username:'" + user_name + "', UserID:'" + user_id + "', IsBot:'" + is_bot + "', LanguageCode:'" + language_code + "']")
         else:
-            bot.delete_message(chat_id=query.message.chat_id, message_id=query.message.message_id)
+            try:
+                bot.delete_message(chat_id=query.message.chat_id, message_id=query.message.message_id)
+            except:
+                post_prev=posts[z-1]
+                post_prev_data=post_prev.split('////')
+                try:
+                    query.message.edit_media(media=InputMediaPhoto(media=post_prev_data[0], caption=post_prev_data[1]))
+                except:
+                    print('wtf')
             bot.send_message(chat_id=user_id, text='Limit reached!! Go out and touch some grass')
 
     elif 'nxt_post' in data:
@@ -569,7 +601,15 @@ def queryHandler(update: Update, context: CallbackContext):
     
         reply_markup=InlineKeyboardMarkup(keyboard)
         if '.jpg' in post_data[0] or '.png' in post_data[0] or '.jpeg' in post_data[0]:
-            bot.delete_message(chat_id=query.message.chat_id, message_id=query.message.message_id)
+            try:
+                bot.delete_message(chat_id=query.message.chat_id, message_id=query.message.message_id)
+            except:
+                post_prev=posts[z-1]
+                post_prev_data=post_prev.split('////')
+                try:
+                    query.message.edit_media(media=InputMediaPhoto(media=post_prev_data[0], caption=post_prev_data[1]))
+                except:
+                    print('wtf')
             try:
                 keyboard=[[InlineKeyboardButton(text='Next', callback_data='nxt_post////'+link),
                    InlineKeyboardButton(text='Sort by category', callback_data='cat////'+link),
@@ -595,7 +635,15 @@ def queryHandler(update: Update, context: CallbackContext):
                     
                     bot.send_message(chat_id=query.message.chat_id, text=post_data[1]+'\n\n'+post_data[0], reply_markup=reply_markup)
         elif '.mp4' in post_data[0] or '.gif' in post_data[0]:
-            bot.delete_message(chat_id=query.message.chat_id, message_id=query.message.message_id)
+            try:
+                bot.delete_message(chat_id=query.message.chat_id, message_id=query.message.message_id)
+            except:
+                post_prev=posts[z-1]
+                post_prev_data=post_prev.split('////')
+                try:
+                    query.message.edit_media(media=InputMediaPhoto(media=post_prev_data[0], caption=post_prev_data[1]))
+                except:
+                    print('wtf')
             try:
                 keyboard=[[InlineKeyboardButton(text='Next', callback_data='nxt_post////'+link),
                    InlineKeyboardButton(text='Sort by category', callback_data='cat////'+link),
@@ -621,7 +669,15 @@ def queryHandler(update: Update, context: CallbackContext):
                     
                     bot.send_message(chat_id=query.message.chat_id, text=post_data[1]+'\n\n'+post_data[0], reply_markup=reply_markup)
         else:
-            bot.delete_message(chat_id=query.message.chat_id, message_id=query.message.message_id)
+            try:
+                bot.delete_message(chat_id=query.message.chat_id, message_id=query.message.message_id)
+            except:
+                post_prev=posts[z-1]
+                post_prev_data=post_prev.split('////')
+                try:
+                    query.message.edit_media(media=InputMediaPhoto(media=post_prev_data[0], caption=post_prev_data[1]))
+                except:
+                    print('wtf')
             try:
                 keyboard=[[InlineKeyboardButton(text='Next', callback_data='nxt_post////'+link),
                    InlineKeyboardButton(text='Sort by category', callback_data='cat////'+link),
@@ -671,7 +727,15 @@ def queryHandler(update: Update, context: CallbackContext):
             print(str(now) + ", Ad_status: "+ad_status+", user_fre: "+str(fre)+", Frequency: " + str(post_count) + ", Command: '/nxt" + "' , Other : [FirstName:'" + first_name + "', LastName:'" + last_name + "', Username:'" + user_name + "', UserID:'" + user_id + "', IsBot:'" + is_bot + "', LanguageCode:'" + language_code + "']")
 
         else:
-            bot.delete_message(chat_id=query.message.chat_id, message_id=query.message.message_id)
+            try:
+                bot.delete_message(chat_id=query.message.chat_id, message_id=query.message.message_id)
+            except:
+                post_prev=posts[z-1]
+                post_prev_data=post_prev.split('////')
+                try:
+                    query.message.edit_media(media=InputMediaPhoto(media=post_prev_data[0], caption=post_prev_data[1]))
+                except:
+                    print('wtf')
             bot.send_message(chat_id=user_id, text='Limit reached!! Go out and touch some grass')
 
     elif 'cat' in data and 'category' not in data:
@@ -685,7 +749,15 @@ def queryHandler(update: Update, context: CallbackContext):
         try:
             query.edit_message_text(text='Select any one the categories from below', reply_markup=reply_markup)
         except:
-            bot.delete_message(chat_id=query.message.chat_id, message_id=query.message.message_id)
+            try:
+                bot.delete_message(chat_id=query.message.chat_id, message_id=query.message.message_id)
+            except:
+                post_prev=posts[z-1]
+                post_prev_data=post_prev.split('////')
+                try:
+                    query.message.edit_media(media=InputMediaPhoto(media=post_prev_data[0], caption=post_prev_data[1]))
+                except:
+                    print('wtf')
             bot.send_message(chat_id=user_id, text='Select any one the categories from below', reply_markup=reply_markup)
             
 
